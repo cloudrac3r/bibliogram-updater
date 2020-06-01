@@ -5,6 +5,8 @@ source utils/constants.fish; or exit
 source utils/interactive.fish; or exit
 source utils/helpers.fish; or exit
 
+mkdir -p state
+
 echo '
 ====================================
 Welcome to the Bibliogram installer.
