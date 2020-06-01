@@ -1,4 +1,4 @@
-#!/usr/bin/fish
+#!/usr/bin/env fish
 
 set node_download_url 'https://nodejs.org/dist/v12.16.3/node-v12.16.3-linux-x64.tar.xz'
 set node_tarball 'node.tar.xz'

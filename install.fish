@@ -1,4 +1,4 @@
-#!/usr/bin/fish
+#!/usr/bin/env fish
 
 source utils/environment.fish; or exit
 source utils/constants.fish; or exit

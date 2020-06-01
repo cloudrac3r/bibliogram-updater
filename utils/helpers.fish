@@ -1,3 +1,5 @@
+#!/usr/bin/env fish
+
 # Write the value of variables into a file, using the names of the variables
 # as the keys.
 # argv[1]: the path to the template.

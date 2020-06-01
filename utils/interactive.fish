@@ -1,4 +1,4 @@
-#!/usr/bin/fish
+#!/usr/bin/env fish
 
 # Ask the user to press enter to continue or ctrl-c to quit.
 function continue_or_quit

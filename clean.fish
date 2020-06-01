@@ -1,4 +1,4 @@
-#!/usr/bin/fish
+#!/usr/bin/env fish
 
 source utils/interactive.fish
 source utils/constants.fish

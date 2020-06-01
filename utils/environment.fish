@@ -1,4 +1,4 @@
-#!/usr/bin/fish
+#!/usr/bin/env fish
 
 # Check whether commands are available.
 # argv: list of commands to check.
