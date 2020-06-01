@@ -57,6 +57,6 @@ If you want to port this to bash, please go ahead! I would have written it in ba
 1. It will guide you through setting up `website_origin`, `port`, `feeds/enabled`, and `does_not_track`.
 1. It will send you back to `run.fish`.
 
-`./clean.fish`
+`clean.fish`
 
 1. It will ask you for confirmation, then delete any files and directories that the other scripts created.
