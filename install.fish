@@ -38,6 +38,7 @@ end
 
 if not test -e bibliogram
 	git clone https://github.com/cloudrac3r/bibliogram; or exit
+	mkdir -p bibliogram/db
 else
 	echo "Bibliogram is already cloned. We'll use the existing folder."
 end
