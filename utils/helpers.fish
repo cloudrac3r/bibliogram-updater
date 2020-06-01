@@ -17,5 +17,5 @@ end
 # Attempts to update.
 # exit code: 0 if updated, 1 if no updates available
 function do_update
-	env LANG=C git pull | grep -v 'Already up to date.'
+	env LANG=C git pull | grep -v 'Already up[ -]to[ -]date.'
 end
