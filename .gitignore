@@ -1,0 +1,7 @@
+# Artifacts
+/bibliogram
+/state/*
+/node-v*
+
+# Editor
+.vscode/csak-timelog.json
