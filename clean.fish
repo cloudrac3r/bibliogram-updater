@@ -1,5 +1,7 @@
 #!/usr/bin/env fish
 
+cd (dirname (status filename))
+
 source utils/interactive.fish
 source utils/constants.fish
 

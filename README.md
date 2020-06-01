@@ -6,8 +6,6 @@ A collection of scripts to easily install and update Bibliogram.
 
 `git clone https://github.com/cloudrac3r/bibliogram-updater`
 
-**Please run all scripts with the root of this repo as the working directory.**
-
 Run `./run.fish` to run Bibliogram, and to install it and its requirements if they don't already exist. Updates will be installed automatically.
 
 Run `./clean.fish` to clean up the installation.

@@ -1,5 +1,7 @@
 #!/usr/bin/env fish
 
+cd (dirname (status filename))
+
 source utils/helpers.fish
 
 if do_update

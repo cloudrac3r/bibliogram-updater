@@ -1,5 +1,7 @@
 #!/usr/bin/env fish
 
+cd (dirname (status filename))
+
 source utils/environment.fish; or exit
 source utils/constants.fish; or exit
 source utils/interactive.fish; or exit
