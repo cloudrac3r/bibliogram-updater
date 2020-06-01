@@ -8,7 +8,7 @@ if do_update
 end
 
 if not test -e state/is_installed
-	./install.fish
+	exec ./install.fish
 end
 
 # ---
