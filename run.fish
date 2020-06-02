@@ -2,7 +2,8 @@
 
 cd (dirname (status filename))
 
-source utils/helpers.fish
+source utils/helpers.fish; or exit
+source utils/constants.fish; or exit
 
 if do_update
 	echo 'Self-update successful.'
