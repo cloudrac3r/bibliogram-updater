@@ -15,6 +15,10 @@ end
 
 # ---
 
+if test -e state/use_local_node
+	set -a PATH $PWD/$node_folder/bin
+end
+
 set pull_interval 10m
 set update_applied false
 

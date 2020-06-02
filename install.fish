@@ -19,10 +19,6 @@ asked to make choices.
 
 require_command_deps wget git nc
 
-if test -e test/use_local_node
-	set -a PATH $PWD/$node_folder/bin
-end
-
 if not command -sq node
 	echo 'node not found in path.'
 	echo 'Download the node executable now? It will not be installed system-wide.'
@@ -34,7 +30,6 @@ if not command -sq node
 	echo 'done.'
 	rm $node_tarball; or exit
 	touch state/use_local_node
-	set -a PATH $PWD/$node_folder/bin
 	echo
 end
 
