@@ -25,7 +25,9 @@ set update_applied false
 
 cd bibliogram/src/site
 
-do_update
+if do_update
+	npm install --no-optional
+end
 
 while true
 	set update_applied false
@@ -37,6 +39,7 @@ while true
 		sleep $pull_interval
 
 		if do_update
+			npm install --no-optional
 			set update_applied true
 			kill $b_pid
 		else
