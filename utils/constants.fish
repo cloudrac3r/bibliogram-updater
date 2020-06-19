@@ -1,8 +1,16 @@
 #!/usr/bin/env fish
 
-set node_download_url 'https://nodejs.org/dist/v12.16.3/node-v12.16.3-linux-x64.tar.xz'
+set arch
+switch (uname -i)
+	case x86_64
+		set arch x64
+	case armv7l
+		set arch armv7l
+end
+
+set node_download_url "https://nodejs.org/dist/v12.18.1/node-v12.18.1-linux-$arch.tar.xz"
 set node_tarball 'node.tar.xz'
-set node_folder 'node-v12.16.3-linux-x64'
+set node_folder "node-v12.18.1-linux-$arch"
 set npm_install_args -s
 set updater_host 'localhost'
 set updater_port '10407'
