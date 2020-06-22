@@ -21,8 +21,8 @@ if test -n "$missing"; then
 		echo "$missing"
 		echo '`sudo apt` will be run now.'
 		echo
-		sudo apt update; or exit
-		sudo apt install -y $missing; or exit
+		sudo apt update || exit
+		sudo apt install -y $missing || exit
 	else
 		echo 'These commands are missing:'
 		echo "$missing"
