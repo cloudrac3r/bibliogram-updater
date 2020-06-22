@@ -22,7 +22,7 @@ require_command_deps wget git nc
 if not command -sq node
 	echo 'node not found in path.'
 	echo 'Download the node executable now? It will not be installed system-wide.'
-	echo 'The Linux x64 version will be downloaded.'
+	echo "The Linux $arch version will be downloaded."
 	continue_or_quit
 	wget $node_download_url -O $node_tarball --progress=bar:noscroll -nv --show-progress; or exit
 	echo -n 'Extracting... '
