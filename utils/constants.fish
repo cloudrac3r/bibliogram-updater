@@ -6,9 +6,11 @@ switch (uname -m)
 		set arch armv7l
 end
 
-set node_download_url "https://nodejs.org/dist/v12.18.1/node-v12.18.1-linux-$arch.tar.xz"
+set node_version v14.4.0
+
+set node_download_url "https://nodejs.org/dist/$node_version/node-$node_version-linux-$arch.tar.xz"
 set node_tarball 'node.tar.xz'
-set node_folder "node-v12.18.1-linux-$arch"
+set node_folder "node-$node_version-linux-$arch"
 set npm_install_args -s
 set updater_host 'localhost'
 set updater_port '10407'
