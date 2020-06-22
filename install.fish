@@ -69,7 +69,11 @@ if y_or_n
 	echo
 
 	echo 'What URL will people visit to access your instance?'
-	echo '(example: https://bibliogram.art)'
+	echo '(example for public internet: https://bibliogram.art)'
+	set ip (ifconfig eth0 2>/dev/null | grep 'inet ' | awk '{print $2}')
+	if test (count $ip) -eq 1
+		echo "(example for your LAN: http://$ip:10407)"
+	end
 	set s_website_origin (get_input_matching 'https?://.+')
 	echo
 
