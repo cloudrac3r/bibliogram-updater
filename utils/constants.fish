@@ -1,9 +1,7 @@
 #!/usr/bin/env fish
 
-set arch
-switch (uname -i)
-	case x86_64
-		set arch x64
+set arch x64
+switch (uname -m)
 	case armv7l
 		set arch armv7l
 end

@@ -33,6 +33,10 @@ if not command -sq node
 	echo
 end
 
+if test -e state/use_local_node
+	set -a PATH $PWD/$node_folder/bin
+end
+
 if not test -e bibliogram
 	git clone https://github.com/cloudrac3r/bibliogram; or exit
 	mkdir -p bibliogram/db
