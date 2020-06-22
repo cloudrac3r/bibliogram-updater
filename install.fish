@@ -45,23 +45,6 @@ else
 end
 echo
 
-pushd bibliogram
-
-	# Assume no. This sounds like a good thing, but it's most likely not.
-	set -a npm_install_args --no-optional
-	set s_tor_enabled false
-	# echo 'Use Tor for outgoing requests? (suggested: n)'
-	# if not y_or_n
-	# 	set -a npm_install_args --no-optional
-	# 	set s_tor_enabled false
-	# end
-	# echo
-
-	npm install $npm_install_args; or exit
-	echo
-
-popd
-
 echo 'Create a new configuration file?'
 echo 'If you have not created one yet, you MUST do this step now.'
 echo 'If you have already created one, continuing will overwrite it.'
@@ -119,6 +102,23 @@ if y_or_n
 	echo 'Config file written.'
 end
 echo
+
+pushd bibliogram
+
+	# Assume no. This sounds like a good thing, but it's most likely not.
+	set -a npm_install_args --no-optional
+	set s_tor_enabled false
+	# echo 'Use Tor for outgoing requests? (suggested: n)'
+	# if not y_or_n
+	# 	set -a npm_install_args --no-optional
+	# 	set s_tor_enabled false
+	# end
+	# echo
+
+	npm install $npm_install_args; or exit
+	echo
+
+popd
 
 touch state/is_installed
 
