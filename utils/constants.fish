@@ -14,7 +14,7 @@ end
 set node_version v14.4.0
 
 set node_download_url "https://nodejs.org/dist/$node_version/node-$node_version-linux-$arch.tar.$ext"
-set node_tarball 'node.tar.xz'
+set node_tarball "node.tar.$ext"
 set node_folder "node-$node_version-linux-$arch"
 set npm_install_args -s
 set updater_host 'localhost'
