@@ -38,7 +38,7 @@ if test -e state/use_local_node
 end
 
 if not test -e bibliogram
-	git clone https://github.com/cloudrac3r/bibliogram; or exit
+	git clone https://git.sr.ht/~cadence/bibliogram; or exit
 	mkdir -p bibliogram/db
 else
 	echo "Bibliogram is already cloned. We'll use the existing folder."
@@ -123,13 +123,13 @@ popd
 touch state/is_installed
 
 echo '  -> If you need help making Bibliogram accessible on the public internet, see:'
-echo '     https://github.com/cloudrac3r/bibliogram/wiki/Installing#making-bibliogram-accessible-from-outside'
+echo '     https://git.sr.ht/~cadence/bibliogram-docs/tree/master/docs/Installing%20(extended).md#making-bibliogram-accessible-from-outside'
 echo '  -> Please consider adding yourself to the instance list:'
-echo '     https://github.com/cloudrac3r/bibliogram/wiki/Instances'
+echo '     https://git.sr.ht/~cadence/bibliogram-docs/tree/master/docs/Instances.md'
 echo "  -> If you'd like to see the other configuration options, check out:"
 echo '     https://github.com/cloudrac3r/bibliogram/wiki/Configuring'
 echo '  -> Please take the time to write a privacy policy:'
-echo '     https://github.com/cloudrac3r/bibliogram/blob/master/src/site/pug/privacy.pug.template'
+echo '     https://git.sr.ht/~cadence/bibliogram/tree/master/src/site/pug/privacy.pug.template'
 echo
 echo 'Start Bibliogram now?'
 

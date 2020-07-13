@@ -31,6 +31,6 @@ if test -n "$missing"; then
 	fi
 fi
 
-git clone https://github.com/cloudrac3r/bibliogram-updater
+git clone https://git.sr.ht/~cadence/bibliogram-updater
 cd bibliogram-updater
 exec ./run.fish

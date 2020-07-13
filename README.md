@@ -4,7 +4,7 @@ A collection of scripts to easily install and update Bibliogram.
 
 ## Quick start
 
-`git clone https://github.com/cloudrac3r/bibliogram-updater`
+`git clone https://git.sr.ht/~cadence/bibliogram-updater`
 
 Run `./run.fish` to run Bibliogram, and to install it and its requirements if they don't already exist. Updates will be installed automatically.
 
@@ -14,12 +14,12 @@ Run `./clean.fish` to clean up the installation.
 
 You may want to do some of these things:
 
-- [Learn how to make Bibliogram available on the public internet](https://github.com/cloudrac3r/bibliogram/wiki/Installing#making-bibliogram-accessible-from-outside)
-- [Add your public instance to the instance list](https://github.com/cloudrac3r/bibliogram/wiki/Instances)
+- [Learn how to make Bibliogram available on the public internet](https://git.sr.ht/~cadence/bibliogram-docs/tree/master/docs/Installing%20(extended).md#making-bibliogram-accessible-from-outside)
+- [Add your public instance to the instance list](https://git.sr.ht/~cadence/bibliogram-docs/tree/master/docs/Instances.md)
 - [Look at all of the configuration options](https://github.com/cloudrac3r/bibliogram/wiki/Configuring)
-- [Write a privacy policy for your users](https://github.com/cloudrac3r/bibliogram/blob/master/src/site/pug/privacy.pug.template)
+- [Write a privacy policy for your users](https://git.sr.ht/~cadence/bibliogram/tree/master/src/site/pug/privacy.pug.template)
 - [Join the discussion room on Matrix: #bibliogram:matrix.org](https://matrix.to/#/#bibliogram:matrix.org)
-- [Browse the rest of the wiki](https://github.com/cloudrac3r/bibliogram/wiki)
+- [Browse the documentation](https://git.sr.ht/~cadence/bibliogram-docs/tree/master/docs)
 - Tell your friends to run Bibliogram too
 
 ## It didn't work!
