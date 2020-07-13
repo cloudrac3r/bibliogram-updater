@@ -2,6 +2,22 @@
 
 A collection of scripts to easily install and update Bibliogram.
 
+## Navigation
+
+- [Bibliogram project on sourcehut][project]
+- [Bibliogram code repository][main repo]
+- [Bibliogram issues tracker][issues]
+- › Updater code repository
+- [Full documentation][docs folder]
+- [Discussion on Matrix][matrix]
+
+[project]: https://sr.ht/~cadence/bibliogram/
+[main repo]: https://git.sr.ht/~cadence/bibliogram
+[issues]: https://todo.sr.ht/~cadence/bibliogram-issues
+[updater repo]: https://git.sr.ht/~cadence/bibliogram-updater
+[docs folder]: https://git.sr.ht/~cadence/bibliogram-docs/tree/master/docs
+[matrix]: https://matrix.to/#/#bibliogram:matrix.org
+
 ## Quick start
 
 `git clone https://git.sr.ht/~cadence/bibliogram-updater`
