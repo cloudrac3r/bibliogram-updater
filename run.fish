@@ -5,6 +5,8 @@ cd (dirname (status filename))
 source utils/helpers.fish; or exit
 source utils/constants.fish; or exit
 
+update_origin_url 'https://github.com/cloudrac3r/bibliogram-updater(?:.git)?' 'https://git.sr.ht/~cadence/bibliogram-updater'; or exit
+
 if do_update
 	echo 'Self-update successful.'
 	exec ./run.fish
@@ -24,6 +26,8 @@ set pull_interval 10m
 set update_applied false
 
 cd bibliogram/src/site
+
+update_origin_url 'https://github.com/cloudrac3r/bibliogram(?:.git)?' 'https://git.sr.ht/~cadence/bibliogram'; or exit
 
 if do_update
 	npm install --no-optional
