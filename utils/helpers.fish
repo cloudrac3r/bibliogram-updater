@@ -36,3 +36,14 @@ function update_origin_url
 		git fetch --quiet; or return 1
 	end
 end
+
+# Alter a variable with math.
+# argv[1]: the variable to alter.
+# argv[2...]: arguments to math.
+# text: the new value of the variable.
+function quick_math
+	set -l variable $argv[1]
+	set -l math_args $argv[2..-1]
+	set $variable (math $$variable $math_args)
+	echo $$variable
+end

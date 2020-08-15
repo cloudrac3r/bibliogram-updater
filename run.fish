@@ -24,6 +24,13 @@ end
 
 set pull_interval 10m
 set update_applied false
+set should_auto_restart (count $argv[1] >/dev/null; and echo true; or echo false)
+set auto_restart_cycles $argv[1]
+set auto_restart_countdown $auto_restart_cycles
+
+function do_restart_countdown
+	$should_auto_restart; and test (quick_math auto_restart_countdown - 1) -le 0
+end
 
 cd bibliogram/src/site
 
@@ -37,15 +44,15 @@ while true
 	set update_applied false
 
 	echo '' | node server.js &
-	set -l b_pid (jobs -p)
 
 	while not $update_applied
 		sleep $pull_interval
 
-		if do_update
+		if do_update; or do_restart_countdown
 			npm install --no-optional
 			set update_applied true
-			kill $b_pid
+			set auto_restart_countdown $auto_restart_cycles
+			kill (jobs -p)
 		else
 			echo '[ ] ['(date +%H%M%S)'] [UPD] No updates available yet.'
 		end
