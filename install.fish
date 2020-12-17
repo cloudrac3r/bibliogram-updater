@@ -52,16 +52,15 @@ if y_or_n
 	echo
 
 	echo 'What URL will people visit to access your instance?'
-	echo '(example for public internet: https://bibliogram.art)'
-	set ip (ifconfig eth0 2>/dev/null | grep 'inet ' | awk '{print $2}')
-	if test (count $ip) -eq 1
-		echo "(example for your LAN: http://$ip:10407)"
-	end
+	echo '   example for public internet: https://bibliogram.art'
+    echo '   example for same machine only: http://127.0.0.1:10407'
+	set ip (ifconfig 2>/dev/null | string replace -r -f '\s+inet ([0-9.]+) .*' '$1' | string match -v '127.0.0.1')
+	string sub '   example for your LAN: http://'$ip':10407'
 	set s_website_origin (get_input_matching 'https?://.+')
 	echo
 
 	echo "What port should Bibliogram's webserver listen on?"
-	echo 'You cannot use ports below 1024.'
+    echo 'The standard choice is 10407.'
 	set s_port (get_input_matching '\d+')
 	echo
 
@@ -74,6 +73,15 @@ if y_or_n
 		set s_feeds_enabled true
 	else
 		set s_feeds_enabled false
+	end
+	echo
+
+	set s_tor_enabled true
+	echo 'Use Tor for outgoing requests?'
+	echo 'If this installation is for a home network, choose no.'
+	echo 'If this installation is in the cloud, choose yes.'
+	if not y_or_n
+		set s_tor_enabled false
 	end
 	echo
 
@@ -97,24 +105,14 @@ if y_or_n
 	echo
 
 	write_config 'data/config.template' \
-		s_website_origin,\" s_port s_does_not_track s_feeds_enabled \
+		s_website_origin,\" s_port s_does_not_track s_feeds_enabled s_tor_enabled \
 		> bibliogram/config.js; or exit # the " is to surround the value to create a string
 	echo 'Config file written.'
 end
 echo
 
 pushd bibliogram
-
-	# Assume no. This sounds like a good thing, but it's most likely not.
-	set -a npm_install_args --no-optional
-	set s_tor_enabled false
-	# echo 'Use Tor for outgoing requests? (suggested: n)'
-	# if not y_or_n
-	# 	set -a npm_install_args --no-optional
-	# 	set s_tor_enabled false
-	# end
-	# echo
-
+	$s_tor_enabled; or set -a npm_install_args --no-optional
 	npm install $npm_install_args; or exit
 	echo
 
@@ -127,7 +125,7 @@ echo '     https://git.sr.ht/~cadence/bibliogram-docs/tree/master/docs/Installin
 echo '  -> Please consider adding yourself to the instance list:'
 echo '     https://git.sr.ht/~cadence/bibliogram-docs/tree/master/docs/Instances.md'
 echo "  -> If you'd like to see the other configuration options, check out:"
-echo '     https://github.com/cloudrac3r/bibliogram/wiki/Configuring'
+echo '     https://git.sr.ht/~cadence/bibliogram-docs/tree/master/docs/Configuring.md'
 echo '  -> Please take the time to write a privacy policy:'
 echo '     https://git.sr.ht/~cadence/bibliogram/tree/master/src/site/pug/privacy.pug.template'
 echo

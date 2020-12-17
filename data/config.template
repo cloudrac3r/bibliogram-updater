@@ -9,6 +9,9 @@ module.exports = {
 	website_origin: $s_website_origin,
 	port: $s_port,
 	does_not_track: $s_does_not_track,
+	tor: {
+		enabled: $s_tor_enabled
+	},
 	feeds: {
 		enabled: $s_feeds_enabled
 	}
