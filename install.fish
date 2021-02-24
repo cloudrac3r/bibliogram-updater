@@ -2,6 +2,8 @@
 
 cd (dirname (status filename))
 
+argparse (fish_opt --short l --long force-local-node --long-only) -- $argv; or exit
+
 source utils/environment.fish; or exit
 source utils/constants.fish; or exit
 source utils/interactive.fish; or exit
@@ -19,8 +21,8 @@ asked to make choices.
 
 require_command_deps wget git nc
 
-if not command -sq node
-	echo 'node not found in path.'
+if test $_flag_force_local_node; or not command -sq node
+	command -sq node; or echo 'node not found in path.'
 	echo 'Download the node executable now? It will not be installed system-wide.'
 	echo "The Linux $arch version will be downloaded."
 	continue_or_quit
