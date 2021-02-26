@@ -21,6 +21,10 @@ asked to make choices.
 
 require_command_deps wget git nc
 
+if test -e state/use_local_node
+	set -a PATH $PWD/$node_folder/bin
+end
+
 if test $_flag_force_local_node; or not command -sq node
 	command -sq node; or echo 'node not found in path.'
 	echo 'Download the node executable now? It will not be installed system-wide.'
@@ -33,10 +37,6 @@ if test $_flag_force_local_node; or not command -sq node
 	rm $node_tarball; or exit
 	touch state/use_local_node
 	echo
-end
-
-if test -e state/use_local_node
-	set -a PATH $PWD/$node_folder/bin
 end
 
 if not test -e bibliogram
