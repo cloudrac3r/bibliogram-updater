@@ -115,7 +115,7 @@ echo
 
 pushd bibliogram
 	$s_tor_enabled; or set -a npm_install_args --no-optional
-	npm install $npm_install_args; or exit
+	env GRANAX_USE_TOR_ALPHA=1 npm install $npm_install_args; or exit
 	echo
 
 popd
