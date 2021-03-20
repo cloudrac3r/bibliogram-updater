@@ -19,7 +19,7 @@ asked to make choices.
 ====================================
 '
 
-require_command_deps wget git nc
+require_command_deps wget git nc gm
 
 if test -e state/use_local_node
 	set -a PATH $PWD/$node_folder/bin
